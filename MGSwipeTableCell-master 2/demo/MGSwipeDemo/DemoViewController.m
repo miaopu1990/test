@@ -165,8 +165,7 @@
              swipeSettings:(MGSwipeSettings*) swipeSettings expansionSettings:(MGSwipeExpansionSettings*) expansionSettings;
 {
     TestData * data = [tests objectAtIndex:[self.tableView indexPathForCell:cell].row];
-    swipeSettings.transition = data.transition;
- 
+  
         expansionSettings.buttonIndex = data.rightExpandableIndex;
         expansionSettings.fillOnTrigger = YES;
         return [self createRightButtons:data.rightButtonsCount];

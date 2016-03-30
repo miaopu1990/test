@@ -32,7 +32,6 @@
               for (int z = 0; z < 5; ++z) {
                 TestData * data = [[TestData alloc] init];
                 data.rightButtonsCount = 1;
-                data.transition = MGSwipeTransitionStatic;
                 data.rightExpandableIndex = 0;
                 [tests addObject:data];
             

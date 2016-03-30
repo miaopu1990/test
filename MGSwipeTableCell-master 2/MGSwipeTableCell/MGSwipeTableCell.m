@@ -255,15 +255,10 @@
     container.layer.transform = transform;
 }
 
--(void) transition:(MGSwipeTransition) mode percent:(CGFloat) t
+-(void) percent:(CGFloat) t
 {
-    switch (mode) {
-        case MGSwipeTransitionStatic: [self transitionStatic:t]; break;
-        case MGSwipeTransitionDrag: [self transitionDrag:t]; break;
-        case MGSwipeTransitionClipCenter: [self transitionClip:t]; break;
-        case MGSwipeTransitionBorder: [self transtitionFloatBorder:t]; break;
-        case MGSwipeTransition3D: [self transition3D:t]; break;
-    }
+      [self transitionStatic:t];
+
 }
 
 @end
@@ -273,7 +268,6 @@
 -(instancetype) init
 {
     if (self = [super init]) {
-        self.transition = MGSwipeTransitionBorder;
         self.threshold = 0.5;
     }
     return self;
@@ -598,7 +592,6 @@ typedef struct MGSwipeAnimationData {
     
     //animate existing buttons
     MGSwipeButtonsView* but[2] = {leftView, rightView};
-    MGSwipeSettings* settings[2] = {_leftSwipeSettings, _rightSwipeSettings};
     MGSwipeExpansionSettings * expansions[2] = {_leftExpansion, _rightExpansion};
     
     for (int i = 0; i< 2; ++i) {
@@ -620,7 +613,7 @@ typedef struct MGSwipeAnimationData {
             [view endExpansioAnimated:YES];
             activeExpansion = nil;
             CGFloat t = MIN(1.0f, offset/view.bounds.size.width);
-            [view transition:settings[i].transition percent:t];
+            [view percent:t];
         }
     }
 }

@@ -9,15 +9,6 @@
 
 #import <UIKit/UIKit.h>
 
-/** Transition types */
-typedef enum MGSwipeTransition {
-    MGSwipeTransitionBorder = 0,
-    MGSwipeTransitionStatic,
-    MGSwipeTransitionDrag,
-    MGSwipeTransitionClipCenter,
-    MGSwipeTransition3D,
-    
-} MGSwipeTransition;
 
 /** Swipe directions */
 typedef enum MGSwipeDirection {
@@ -32,7 +23,6 @@ typedef enum MGSwipeDirection {
  **/
 @interface MGSwipeSettings: NSObject
 /** Transition used while swipping buttons */
-@property (nonatomic, assign) MGSwipeTransition transition;
 /** Size proportional threshold to hide/keep the buttons when the user ends swipping. Default value 0.5 */
 @property (nonatomic, assign) CGFloat threshold;
 @end
