@@ -13,7 +13,6 @@
 
 #import "DemoViewController.h"
 #import "TestData.h"
-#import "MGSwipeButton.h"
 
 #define TEST_USE_MG_DELEGATE 1
 
@@ -90,39 +89,21 @@
 }
 
 
--(NSArray *) createLeftButtons: (int) number
-{
-    NSMutableArray * result = [NSMutableArray array];
-    UIColor * colors[3] = {[UIColor greenColor],
-        [UIColor colorWithRed:0 green:0x99/255.0 blue:0xcc/255.0 alpha:1.0],
-        [UIColor colorWithRed:0.59 green:0.29 blue:0.08 alpha:1.0]};
-    UIImage * icons[3] = {[UIImage imageNamed:@"check.png"], [UIImage imageNamed:@"fav.png"], [UIImage imageNamed:@"menu.png"]};
-    for (int i = 0; i < number; ++i)
-    {
-        MGSwipeButton * button = [MGSwipeButton buttonWithTitle:@"" icon:icons[i] backgroundColor:colors[i] callback:^BOOL(MGSwipeTableCell * sender){
-            NSLog(@"Convenience callback received (left).");
-            return YES;
-        }];
-        CGRect frame = button.frame;
-        frame.size.width = 55;
-        button.frame = frame;
-        [result addObject:button];
-    }
-    return result;
-}
-
-
 -(NSArray *) createRightButtons: (int) number
 {
     NSMutableArray * result = [NSMutableArray array];
-    NSString* titles[2] = {@"Delete", @"More"};
-    UIColor * colors[2] = {[UIColor redColor], [UIColor lightGrayColor]};
+   
     for (int i = 0; i < number; ++i)
     {
-        MGSwipeButton * button = [MGSwipeButton buttonWithTitle:titles[i] backgroundColor:colors[i] callback:^BOOL(MGSwipeTableCell * sender){
-            NSLog(@"Convenience callback received (right).");
-            return YES;
-        }];
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.backgroundColor = [UIColor blackColor];
+        [button setTitle:@"AA" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button sizeToFit];
+        CGRect frame = button.frame;
+        frame.size.width += 10; //padding
+        frame.size.width = MAX(50, frame.size.width); //initial min size
+        button.frame = frame;
         [result addObject:button];
     }
     return result;
@@ -185,18 +166,11 @@
 {
     TestData * data = [tests objectAtIndex:[self.tableView indexPathForCell:cell].row];
     swipeSettings.transition = data.transition;
-    
-    if (direction == MGSwipeDirectionLeftToRight) {
-        expansionSettings.buttonIndex = data.leftExpandableIndex;
-        expansionSettings.fillOnTrigger = NO;
-        return [self createLeftButtons:data.leftButtonsCount];
-    }
-    else {
+ 
         expansionSettings.buttonIndex = data.rightExpandableIndex;
         expansionSettings.fillOnTrigger = YES;
         return [self createRightButtons:data.rightButtonsCount];
-    }
-}
+ }
 #endif
 
 

@@ -14,7 +14,6 @@
 		113D5E1C1996AD7400066AE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D5E1B1996AD7400066AE3 /* main.m */; };
 		113D5E201996AD7400066AE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 113D5E1F1996AD7400066AE3 /* AppDelegate.m */; };
 		113D5E221996AD7400066AE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113D5E211996AD7400066AE3 /* Images.xcassets */; };
-		1162A95D1996AE3F00A1DC80 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162A95A1996AE3F00A1DC80 /* MGSwipeButton.m */; };
 		1162A95E1996AE3F00A1DC80 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162A95C1996AE3F00A1DC80 /* MGSwipeTableCell.m */; };
 		1162A9611996AECA00A1DC80 /* TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1162A9601996AECA00A1DC80 /* TestData.m */; };
 		11D0A0141996AFDE008D8809 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D0A0131996AFDE008D8809 /* DemoViewController.m */; };
@@ -38,8 +37,6 @@
 		113D5E1F1996AD7400066AE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		113D5E211996AD7400066AE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		113D5E281996AD7400066AE3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1162A9591996AE3F00A1DC80 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = ../MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
-		1162A95A1996AE3F00A1DC80 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = ../MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
 		1162A95B1996AE3F00A1DC80 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = ../MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
 		1162A95C1996AE3F00A1DC80 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = ../MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
 		1162A9601996AECA00A1DC80 /* TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestData.m; sourceTree = "<group>"; };
@@ -127,8 +124,6 @@
 		1162A9581996AE0E00A1DC80 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				1162A9591996AE3F00A1DC80 /* MGSwipeButton.h */,
-				1162A95A1996AE3F00A1DC80 /* MGSwipeButton.m */,
 				1162A95B1996AE3F00A1DC80 /* MGSwipeTableCell.h */,
 				1162A95C1996AE3F00A1DC80 /* MGSwipeTableCell.m */,
 			);
@@ -214,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1162A95D1996AE3F00A1DC80 /* MGSwipeButton.m in Sources */,
 				1162A95E1996AE3F00A1DC80 /* MGSwipeTableCell.m in Sources */,
 				1162A9611996AECA00A1DC80 /* TestData.m in Sources */,
 				11D0A0141996AFDE008D8809 /* DemoViewController.m in Sources */,
@@ -314,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MGSwipeDemo/MGSwipeDemo-Prefix.pch";
 				INFOPLIST_FILE = "MGSwipeDemo/MGSwipeDemo-Info.plist";
@@ -327,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MGSwipeDemo/MGSwipeDemo-Prefix.pch";
 				INFOPLIST_FILE = "MGSwipeDemo/MGSwipeDemo-Info.plist";

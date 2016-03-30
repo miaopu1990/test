@@ -12,9 +12,7 @@
 @interface TestData : NSObject
 
 @property (nonatomic) MGSwipeTransition transition;
-@property (nonatomic) int leftButtonsCount;
 @property (nonatomic) int rightButtonsCount;
-@property (nonatomic) int leftExpandableIndex;
 @property (nonatomic) int rightExpandableIndex;
 
 
